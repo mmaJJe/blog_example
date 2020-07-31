@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>read</title>
+</head>
+<body>
+    <!-- context 라는 덩어리로 데이터가 넘어옴 -->
+    <!-- html 안에서 파이썬 제어문을 사용할 수 있게 해줌  -->
+    <!-- context ==> { 'boards': boards } 안에 있는 boards 를 불러와 for문을 돌림 -->
+    {% for board in boards %}
+    <a href="{% url 'read_detail' board.pk %}">
+        <h1>{{board.title}}</h1>
+    </a>
+            <h3>{{board.author}}</h3>
+    {% endfor %}
+</body>
+</html>
